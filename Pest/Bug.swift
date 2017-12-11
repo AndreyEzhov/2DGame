@@ -17,7 +17,14 @@ class Bug: SKSpriteNode, Animatable {
     var animations: [SKAction] = []
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init()")
+        super.init(coder: aDecoder)
+        animations = aDecoder.decodeObject(forKey: "Bug.animations")
+            as! [SKAction]
+    }
+
+    override func encode(with aCoder: NSCoder) {
+        aCoder.encode(animations, forKey: "Bug.animations")
+        super.encode(with: aCoder)
     }
 
     init() {
@@ -36,7 +43,7 @@ class Bug: SKSpriteNode, Animatable {
         physicsBody?.categoryBitMask = PhysicsCategory.Bug
     }
 
-    func move() {
+    @objc func moveBug() {
         // 1
         let randomX = CGFloat(Int.random(min: -1, max: 1))
         let randomY = CGFloat(Int.random(min: -1, max: 1))
@@ -44,7 +51,8 @@ class Bug: SKSpriteNode, Animatable {
                               // 2
             dy: randomY * BugSettings.bugDistance)
         let moveBy = SKAction.move(by: vector, duration: 1)
-        let moveAgain = SKAction.run(move)
+        let moveAgain = SKAction.perform(#selector(moveBug),
+                                         onTarget: self)
 
         let direction = animationDirection(for: vector)
         // 2
@@ -66,6 +74,6 @@ class Bug: SKSpriteNode, Animatable {
         // 2
         physicsBody = nil
         // 3
-        run(SKAction.sequence([SKAction.fadeOut(withDuration: 3), SKAction.run(removeFromParent)]))
+        run(SKAction.sequence([SKAction.fadeOut(withDuration: 3), SKAction.removeFromParent()]))
     }
 }
