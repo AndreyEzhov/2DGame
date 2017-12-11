@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E35EE40516CAEF597E4A4AB /* Pods_Pest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD82BACAB284AFAF07793E6 /* Pods_Pest.framework */; };
 		5503002B1FD9834D00988889 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 550300291FD9834D00988889 /* TileSets.sks */; };
 		5503002C1FD9834D00988889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5503002A1FD9834D00988889 /* Assets.xcassets */; };
 		5503002E1FD9886500988889 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503002D1FD9886500988889 /* Player.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F5EB01918B685ADD0EE943A /* Pods-Pest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pest/Pods-Pest.release.xcconfig"; sourceTree = "<group>"; };
+		4FD82BACAB284AFAF07793E6 /* Pods_Pest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		550300291FD9834D00988889 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		5503002A1FD9834D00988889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5503002D1FD9886500988889 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		55F8EA011FDA99800007FB1B /* SKTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTexture.swift; sourceTree = "<group>"; };
 		55F8EA031FDA9C270007FB1B /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		55F8EA051FDABD2D0007FB1B /* Firebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebug.swift; sourceTree = "<group>"; };
+		CFD40B02FB1159F21D8F44D4 /* Pods-Pest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pest/Pods-Pest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E35EE40516CAEF597E4A4AB /* Pods_Pest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13E7C7B192A0C79DC5AC0A84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFD40B02FB1159F21D8F44D4 /* Pods-Pest.debug.xcconfig */,
+				4F5EB01918B685ADD0EE943A /* Pods-Pest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1CA3DC518A947B7A46E68245 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FD82BACAB284AFAF07793E6 /* Pods_Pest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5503002F1FD98FEF00988889 /* SKTUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +131,8 @@
 			children = (
 				551FE9B41FD95273007B03D1 /* Pest */,
 				551FE9B31FD95273007B03D1 /* Products */,
+				13E7C7B192A0C79DC5AC0A84 /* Pods */,
+				1CA3DC518A947B7A46E68245 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,9 +178,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 551FE9CA1FD95273007B03D1 /* Build configuration list for PBXNativeTarget "Pest" */;
 			buildPhases = (
+				E3662F2D20D8B645F73CB6BE /* [CP] Check Pods Manifest.lock */,
 				551FE9AE1FD95273007B03D1 /* Sources */,
 				551FE9AF1FD95273007B03D1 /* Frameworks */,
 				551FE9B01FD95273007B03D1 /* Resources */,
+				36D4EABFABA34F001BA4EE7C /* [CP] Embed Pods Frameworks */,
+				F828FDFC28C3A8CB62700680 /* [CP] Copy Pods Resources */,
+				555076421FDEBB6D00EA7576 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,7 +207,7 @@
 				TargetAttributes = {
 					551FE9B11FD95273007B03D1 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -218,6 +246,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36D4EABFABA34F001BA4EE7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pest/Pods-Pest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		555076421FDEBB6D00EA7576 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" cfe01665ddb681922e3756cccd4b3823da5ee664 7c9d366b533aa092b6d9e398d175995437f8df72bb82d6d020892fc05fd18b9e";
+		};
+		E3662F2D20D8B645F73CB6BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F828FDFC28C3A8CB62700680 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pest/Pods-Pest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		551FE9AE1FD95273007B03D1 /* Sources */ = {
@@ -380,15 +469,18 @@
 		};
 		551FE9CB1FD95273007B03D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD40B02FB1159F21D8F44D4 /* Pods-Pest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6PJ2XVG4Y2;
 				INFOPLIST_FILE = Pest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.Pest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "592f863f-8fc3-458a-8db7-8f215c1c8e61";
+				PROVISIONING_PROFILE_SPECIFIER = PestTest;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,15 +488,18 @@
 		};
 		551FE9CC1FD95273007B03D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F5EB01918B685ADD0EE943A /* Pods-Pest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6PJ2XVG4Y2;
 				INFOPLIST_FILE = Pest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.Pest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "326b6e33-30ba-4247-9194-e3b8ddb74fd6";
+				PROVISIONING_PROFILE_SPECIFIER = PestTest;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
